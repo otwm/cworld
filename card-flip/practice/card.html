@@ -1,0 +1,161 @@
+<style>
+.scene {
+  width: 800px;
+  height: 500px;
+  border: 1px solid gray;
+  perspective: 500px;
+
+  display: flex;
+}
+
+.card {
+  position: relative;
+  /*background-color: blue;*/
+  width: 160px;
+  height: 220px;
+
+  min-width: 160px;
+
+  transition: transform 1s;
+  transform-style: preserve-3d;
+
+  margin: 10px;
+
+  cursor: pointer;
+  border-radius: 15px;
+  border: 3px solid #CCCCCC;
+  /*background: repeating-radial-gradient(#f69d3c, #3f87a6 50px);*/
+}
+
+.face {
+  position: absolute;
+  backface-visibility: hidden;
+  color: red;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 15px;
+}
+
+.front {
+  transform: rotateY(0deg);
+  background-color: white;
+}
+
+.back {
+  transform: rotateY(180deg);
+  background: repeating-radial-gradient(#f69d3c, #3f87a6 50px);
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+.batman {
+  width: 100px;
+  height: 180px;
+  background-image: url('./pngtube.com-deadpool-chibi-png-1107559.png');
+  background-size: 500px;
+}
+
+.spiderman {
+  width: 100px;
+  height: 180px;
+  background-image: url('./pngtube.com-deadpool-chibi-png-1107559.png');
+  background-size: 500px;
+  background-position: -125px 0px;
+}
+
+</style>
+
+<div class="scene">
+  <div class="card">
+    <div class="face front">
+<!--      <div class="batman"></div>-->
+      <div class="batman"></div>
+      <span>
+        1.batman
+      </span>
+    </div>
+    <div class="face back"></div>
+  </div>
+
+  <div class="card">
+    <div class="face front">
+      <!--      <div class="batman"></div>-->
+      <div class="spiderman"></div>
+      <span>
+        2.spiderman
+      </span>
+    </div>
+    <div class="face back"></div>
+  </div>
+
+  <div class="card">
+    <div class="face front">
+      <!--      <div class="batman"></div>-->
+      <div class="spiderman"></div>
+      <span>
+        2.spiderman
+      </span>
+    </div>
+    <div class="face back"></div>
+  </div>
+
+  <div class="card">
+    <div class="face front">
+      <!--      <div class="batman"></div>-->
+      <div class="spiderman"></div>
+      <span>
+        2.spiderman
+      </span>
+    </div>
+    <div class="face back"></div>
+  </div>
+
+  <div class="card">
+    <div class="face front">
+      <!--      <div class="batman"></div>-->
+      <div class="spiderman"></div>
+      <span>
+        2.spiderman
+      </span>
+    </div>
+    <div class="face back"></div>
+  </div>
+
+  <div class="card">
+    <div class="face front">
+      <!--      <div class="batman"></div>-->
+      <div class="spiderman"></div>
+      <span>
+        2.spiderman
+      </span>
+    </div>
+    <div class="face back"></div>
+  </div>
+
+  <div class="card">
+    <div class="face front">
+      <!--      <div class="batman"></div>-->
+      <div class="spiderman"></div>
+      <span>
+        2.spiderman
+      </span>
+    </div>
+    <div class="face back"></div>
+  </div>
+</div>
+
+<script>
+onload = () => {
+  const cards = [ ...document.querySelectorAll('.card')]
+  cards.map(card => card.addEventListener('click', () => {
+    card.classList.toggle('flip')
+  }))
+}
+</script>

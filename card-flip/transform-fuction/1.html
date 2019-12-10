@@ -1,0 +1,59 @@
+<div class="scene">
+  <div class="panel tz-minus">Ok</div>
+</div>
+
+<div class="scene">
+  <div class="panel tz-plus">Ok</div>
+</div>
+
+<div class="scene">
+  <div class="panel rx45">Ok</div>
+</div>
+
+<div class="scene">
+  <div class="panel ry45">Ok</div>
+</div>
+
+<div class="scene">
+  <div class="panel rz45">Ok</div>
+</div>
+
+<style>
+  .scene {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #CCC;
+    margin: 40px;
+    perspective: 600px;
+  }
+
+  .tz-minus {
+    transform: translateZ(-200px);
+  }
+
+  .tz-plus {
+    transform: translateZ(200px);
+  }
+
+  .rx45 {
+    transform: rotateX(45deg);
+  }
+
+  .ry45 {
+    transform: rotateY(45deg);
+  }
+
+  .rz45 {
+    transform: rotateZ(45deg);
+  }
+  .panel {
+    width: 100%;
+    height: 100%;
+    background: hsla(0, 100%, 50%, 0.7);
+    font-size: 18px;
+    text-align: center;
+    color: white;
+    line-height: 200px;
+  }
+
+</style>

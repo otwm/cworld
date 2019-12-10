@@ -1,0 +1,85 @@
+<div class="scene">
+  <div class="cube">
+    <div class="face front">front</div>
+    <div class="face back">back</div>
+    <div class="face right">right</div>
+    <div class="face left">left</div>
+    <div class="face top">top</div>
+    <div class="face bottom">bottom</div>
+  </div>
+</div>
+<label><input type="radio" name="face" value="front"/>front</label>
+<label><input type="radio" name="face" value="back"/>back</label>
+<label><input type="radio" name="face" value="right"/>right</label>
+<label><input type="radio" name="face" value="left"/>left</label>
+<label><input type="radio" name="face" value="top"/>top</label>
+<label><input type="radio" name="face" value="bottom"/>bottom</label>
+
+<script>
+onload = () => {
+  [ ...document.querySelectorAll('input') ].map((input) => {
+    input.addEventListener('click', () => {
+      console.log(this)
+    })
+  })
+}
+</script>
+<style>
+  .scene {
+    margin: 300px;
+    width: 200px;
+    height: 200px;
+    perspective: 600px;
+  }
+
+  .cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: translateZ(-100px);
+    transition: transform 1s;
+  }
+
+  .face {
+    position: absolute;
+    width: 200px;
+    width: 200px;
+    line-height: 200px;
+    text-align: center;
+    font-size: 22px;
+    color: white;
+  }
+
+  .front {
+    background: hsla(  0, 100%, 50%, 0.7);
+    transform: rotateY(0deg) translateZ(100px) ;
+  }
+  .back {
+    background: hsla(  60, 100%, 50%, 0.7);
+    transform: rotateY(180deg) translateZ(100px);
+  }
+  .right {
+    background: hsla(  120, 100%, 50%, 0.7);
+    transform: rotateY(90deg) translateZ(100px);
+  }
+  .left {
+    background: hsla(  180, 100%, 50%, 0.7);
+    transform: rotateY(-90deg) translateZ(100px);
+  }
+  .top {
+    background: hsla(  240, 100%, 50%, 0.7);
+    transform: rotateX(90deg) translateZ(100px);
+  }
+  .bottom {
+    background: hsla(  300, 100%, 50%, 0.7);
+    transform: rotateX(-90deg) translateZ(100px);
+  }
+
+  .cube.show-front  { transform: translateZ(-100px) rotateY(   0deg); }
+  .cube.show-right  { transform: translateZ(-100px) rotateY( -90deg); }
+  .cube.show-back   { transform: translateZ(-100px) rotateY(-180deg); }
+  .cube.show-left   { transform: translateZ(-100px) rotateY(  90deg); }
+  .cube.show-top    { transform: translateZ(-100px) rotateX( -90deg); }
+  .cube.show-bottom { transform: translateZ(-100px) rotateX(  90deg); }
+</style>
